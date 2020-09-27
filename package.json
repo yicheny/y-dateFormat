@@ -1,0 +1,23 @@
+{
+  "name": "y-dateformat",
+  "version": "0.0.1",
+  "description": "dateFormat",
+  "main": "index.js",
+  "scripts": {
+    "t-dateFormat": "mocha ./test/test-dateFormat.js",
+    "t-toDate": "mocha ./test/test-toDate.js"
+  },
+  "keywords": [
+    "date",
+    "formate"
+  ],
+  "author": "yanglvfeng",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
+  }
+}
