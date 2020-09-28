@@ -1,17 +1,19 @@
 const _ = require('lodash');
 
-//toDate :: (String | Number)-> (String | Number) -> Date
-const toDate = _.curry((format, value) => {
-    const strategy = {
-        timestamp: timestampToDate,
-        dateString: dateStringToDate,
-        str14: str14ToDate,
-        num14: str14ToDate,
-        str8: str8ToDate,
-        num8: str8ToDate,
-    }
+const STRATEGY = Object.freeze({
+    timestamp: timestampToDate,
+    dateString: dateStringToDate,
+    str14: str14ToDate,
+    num14: str14ToDate,
+    str8: str8ToDate,
+    num8: str8ToDate,
+});
 
-    return strategy[format] ? strategy[format](value) : null;
+//toDate :: String -> (String | Number) -> Date
+const toDate = _.curry((format, value) => {
+    if (!STRATEGY[format]) return null;
+    const res = STRATEGY[format](value);
+    return String(res) === "Invalid Date" ? null : res;
 })
 
 //timestampToDate :: timestamp -> Date

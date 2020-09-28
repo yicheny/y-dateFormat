@@ -3,10 +3,15 @@ const { timestampToDate, dateStringToDate, str14ToDate, num14ToDate, str8ToDate,
 
 describe('toDate', function () {
     it('测试timestampToDate', function () {
+        //有效
         assert.instanceOf(timestampToDate(100), Date)
         assert.instanceOf(timestampToDate(0), Date)
         assert.instanceOf(timestampToDate(-100), Date)
 
+        assert.isFunction(timestampToDate());
+
+        //无效日期
+        assert.strictEqual(timestampToDate(10000000000000000), null);
         assert.strictEqual(timestampToDate(''), null);
         assert.strictEqual(timestampToDate('a'), null);
         assert.strictEqual(timestampToDate(true), null);
@@ -23,6 +28,7 @@ describe('toDate', function () {
 
         assert.isFunction(dateStringToDate());
 
+        assert.strictEqual(dateStringToDate('xxx'), null);
         assert.strictEqual(dateStringToDate(1), null);
         assert.strictEqual(dateStringToDate(false), null);
         assert.strictEqual(dateStringToDate(true), null);

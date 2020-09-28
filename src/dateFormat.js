@@ -1,22 +1,22 @@
 const _ = require('lodash');
 
+const STRATEGY = Object.freeze({
+    'YYYY-MM-DD': format_day,
+    'HH:MM:SS': format_time,
+    'YYYY-MM-DD HH:MM:SS': format_full,
+    'YYYY': format_year_str4,
+    'YYYYMM': format_month_str6,
+    'YYYYMMDD': format_day_str8,
+    // 'HHMMSS':format_time_str6,
+    'YYYYMMDDHHMMSS': format_str14,
+    'YYYY-W': format_week,
+    'base-now': format_base_now
+});
+
 //dateFormat :: String -> Date -> String
 const dateFormat = _.curry(function (f, d) {
     if (!_.isDate(d)) return '-';
-
-    const strategy = {
-        'YYYY-MM-DD': format_day,
-        'HH:MM:SS': format_time,
-        'YYYY-MM-DD HH:MM:SS': format_full,
-        'YYYY': format_year_str4,
-        'YYYYMM': format_month_str6,
-        'YYYYMMDD': format_day_str8,
-        // 'HHMMSS':format_time_str6,
-        'YYYYMMDDHHMMSS': format_str14,
-        'YYYY-W': format_week,
-        'base-now': format_base_now
-    }
-    return strategy[f] ? strategy[f](d) : '-';
+    return STRATEGY[f] ? STRATEGY[f](d) : '-';
 })
 
 const DAY_MS = 24 * 3600 * 1000;
