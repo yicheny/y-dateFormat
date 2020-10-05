@@ -1,0 +1,37 @@
+
+## 介绍
+toDate接受参数(一般是数字或字符串)将其转换为ES标准日期对象。
+
+提供了预置参数的一些API，有以下转换方法：
+- `timestampToDate` : 参数是时间戳
+- `dateStringToDate` : 参数是原生可以识别的日期字符形式
+- `str14` : 14位字符串
+- `num14` : 14位数字
+- `str8` : 8位字符串
+- `num8` : 8位数字
+
+## 实例演示
+
+<!--RunCode-->
+
+```js
+const { timestampToDate, dateStringToDate, str14ToDate, num14ToDate, str8ToDate,num8ToDate } = toDate;
+
+//推荐写法——优点是预置参数，写法简洁，而且函数名也有其规律，不难看懂
+console.log(timestampToDate(100));//时间戳
+console.log(dateStringToDate('2020-10-10 11:11:11'));//dateString --原生可以识别的日期字符形式
+console.log(str14ToDate('20201010111111'));
+console.log(num14ToDate(20201010111111));
+console.log(str8ToDate('20201010'));
+console.log(num8ToDate(20201010));
+```
+
+<!--/RunCode-->
+
+## 一些其他用法
+```js
+//其他写法
+console.log(toDate.timestampToDate(100));//本质和上面是一样的，不过少了一步解构
+console.log(toDate('timestamp',100));
+console.log(toDate('timestamp')(100));
+```
