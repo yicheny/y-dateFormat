@@ -2,6 +2,10 @@
 ## 介绍
 toDate接受参数(一般是数字或字符串)将其转换为ES标准日期对象。
 
+toDate返回值：
+- 正常返回`Date`对象
+- 异常返回`null`
+
 提供了预置参数的一些API，有以下转换方法：
 - `timestampToDate` : 参数是时间戳
 - `dateStringToDate` : 参数是原生可以识别的日期字符形式

@@ -11,7 +11,7 @@ import './index.scss';
 const App = ()=>{
     return <div>
         <Card title='dateFormat文档'>
-            <ConsoleView source={require('../doc/dateFormat文档.md')} direction='vertical' dependencies={{dateFormat}}/>
+            <ConsoleView source={require('../doc/dateFormat文档.md')} dependencies={{dateFormat}} resizeOps={{height:'auto'}}/>
         </Card>
         <Card title='toDate文档'>
             <ConsoleView source={require('../doc/toDate文档.md')} direction='vertical' dependencies={{toDate}}/>
