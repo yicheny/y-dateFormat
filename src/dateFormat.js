@@ -16,6 +16,7 @@ const STRATEGY = Object.freeze({
 //dateFormat :: String -> Date -> String
 const dateFormat = _.curry(function (f, d) {
     if (!_.isDate(d)) return '-';
+    // if (String(d) === "Invalid Date") return '-';
     return STRATEGY[f] ? STRATEGY[f](d) : '-';
 })
 

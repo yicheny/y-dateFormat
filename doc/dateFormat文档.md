@@ -23,7 +23,8 @@ dateFormat方法接受两个参数:
 <!--RunCode-->
 
 ```js
-const now = new Date();
+// const now = new Date();
+const now = new Date('2020-10-10 11:11:11');
 
 console.log(dateFormat('YYYY-MM-DD',now));
 console.log(dateFormat('HH:MM:SS',now));
