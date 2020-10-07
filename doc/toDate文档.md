@@ -21,7 +21,7 @@ toDate返回值：
 ```js
 const { timestampToDate, dateStringToDate, str14ToDate, num14ToDate, str8ToDate,num8ToDate } = toDate;
 
-//推荐写法——优点是预置参数，写法简洁，而且函数名也有其规律，不难看懂
+//推荐写法——优点是预置参数，写法简洁，而且函数名也有其规律，更容易看懂
 console.log(timestampToDate(100));//时间戳
 console.log(dateStringToDate('2020-10-10 11:11:11'));//dateString --原生可以识别的日期字符形式
 console.log(str14ToDate('20201010111111'));
