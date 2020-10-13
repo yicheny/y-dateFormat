@@ -5,8 +5,9 @@ dateFormat方法接受两个参数:
 - `date`： 原生日期对象`{Date}`
 
 返回值：
-- 正常都是指定形式的字符串
-- 参数异常会返回`'-'`
+- 正常返回指定形式的字符串
+- `format`异常抛错
+- `data`异常返回`null`
 
 目前支持以下`format`：（具体返回形式详见下面的实例演示）
 - `'YYYY-MM-DD'`
@@ -18,6 +19,13 @@ dateFormat方法接受两个参数:
 - `'YYYYMMDDHHMMSS'`
 - `'YYYY-W'`
 - `'base-now'`
+
+## 项目中使用
+```js
+import {dateFormat} from 'rootnet-core/dateFormat';//注意，不是format是dateFormat！
+
+dateFormat('YYYY-MM-DD', new Date());
+```
 
 ## 实例演示
 <!--RunCode-->
@@ -56,5 +64,3 @@ console.log(format_year_str4(date3));
 console.log(format_year_str4(date4));
 ```
 虽然从写法上来说这种写法更简洁一些，而且修改的时候可能会更方便一些，但是从可读性会有所下降，因此并不推荐。
-
-没有内置化参数的主要原因是没有想到合适的描述含义的函数名称，为了可读性考虑，所以没有添加。

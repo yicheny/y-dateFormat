@@ -9,10 +9,18 @@ toDate返回值：
 提供了预置参数的一些API，有以下转换方法：
 - `timestampToDate` : 参数是时间戳
 - `dateStringToDate` : 参数是原生可以识别的日期字符形式
-- `str14` : 14位字符串
-- `num14` : 14位数字
-- `str8` : 8位字符串
-- `num8` : 8位数字
+- `str14ToDate` : 14位字符串
+- `num14ToDate` : 14位数字
+- `str8ToDate` : 8位字符串
+- `num8ToDate` : 8位数字
+
+## 项目中使用
+```js
+import {toDate} from 'rootnet-core/dateFormat';//注意，不是format是dateFormat！
+
+const { timestampToDate} = toDate;
+timestampToDate(100)
+```
 
 ## 实例演示
 
